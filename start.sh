@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ -z "$1" ]; then
+    echo "Usage: $0 <NODE_ID>"
+    exit 1
+fi
+
 NODE_ID=$1
 OFFSET=$(((NODE_ID - 1)*2))
 HTTP_PORT=$((9000 + OFFSET))
